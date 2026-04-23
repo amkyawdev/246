@@ -117,15 +117,6 @@ a:hover {
     min-height: calc(100vh - 60px);
 }
 
-/* ===== Mobile Button ===== */
-.mobile-btn {
-    display: none;
-    width: 56px;
-    height: 56px;
-    z-index: 1030;
-    padding: 0 16px;
-}
-
 /* ===== Responsive ===== */
 /* Desktop (lg+): Show sidebar */
 @media (min-width: 992px) {
@@ -134,21 +125,14 @@ a:hover {
     }
 }
 
-/* Mobile (<992px): Show mobile button only */
+/* Mobile (<992px): Hide sidebar, show content */
 @media (max-width: 991.98px) {
     #sidebar {
         display: none !important;
     }
-    .mobile-btn {
-        display: flex !important;
-        position: fixed;
-        top: 0;
-        left: 0;
-        align-items: center;
-    }
     .main-content {
         margin-left: 0;
-        padding-top: 56px;
+        padding-top: 20px;
     }
 }
 
