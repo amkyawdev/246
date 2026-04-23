@@ -19,14 +19,19 @@ import requests
 # CONFIGURATION
 # ============================================================================
 
-app = Flask(__name__)
+# Get base directory for Vercel compatibility
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+app = Flask(__name__, 
+    template_folder=os.path.join(os.path.dirname(BASE_DIR), 'templates'),
+    static_folder=os.path.join(os.path.dirname(BASE_DIR), 'static')
+)
 app.secret_key = os.environ.get('SECRET_KEY', 'burme-ai-secret-key-change-in-production')
 
 # Enable CORS
 CORS(app, supports_credentials=True)
 
-# Data file path - use absolute path for Vercel compatibility
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# Data file path - use BASE_DIR
 DATA_FILE = os.path.join(BASE_DIR, 'data.json')
 
 # Provider configuration
@@ -532,27 +537,21 @@ def about():
 @app.route('/static/favicon.svg')
 def favicon():
     """Serve favicon"""
-    import os
-    favicon_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'favicon.svg')
-    from flask import send_file
+    favicon_path = os.path.join(BASE_DIR, 'static', 'favicon.svg')
     return send_file(favicon_path, mimetype='image/svg+xml')
 
 
 @app.route('/static/manifest.json')
 def manifest():
     """Serve PWA manifest"""
-    import os
-    manifest_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'manifest.json')
-    from flask import send_file, json
+    manifest_path = os.path.join(BASE_DIR, 'static', 'manifest.json')
     return send_file(manifest_path, mimetype='application/json')
 
 
 @app.route('/static/sw.js')
 def service_worker():
     """Serve service worker"""
-    import os
-    sw_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'sw.js')
-    from flask import send_file
+    sw_path = os.path.join(BASE_DIR, 'static', 'sw.js')
     return send_file(sw_path, mimetype='application/javascript')
 
 
