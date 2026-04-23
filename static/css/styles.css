@@ -122,6 +122,29 @@ a:hover {
     display: flex;
 }
 
+/* Mobile FAB (Social Media Style) */
+.mobile-fab {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+    cursor: pointer;
+}
+.mobile-fab i {
+    font-size: 1.25rem;
+}
+.mobile-fab:hover {
+    transform: scale(1.1);
+}
+
 /* Mobile: Hide sidebar */
 @media (max-width: 991.98px) {
     #sidebar {
@@ -129,6 +152,11 @@ a:hover {
     }
     .main-content {
         margin-left: 0;
+    }
+    .mobile-fab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
