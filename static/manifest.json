@@ -1,0 +1,22 @@
+{
+  "name": "Burme AI",
+  "short_name": "BurmeAI",
+  "description": "Multi-Provider AI API Platform with automatic failover",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D0D",
+  "theme_color": "#E94560",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "en",
+  "Scope": "/",
+  "prefer_related_applications": false
+}

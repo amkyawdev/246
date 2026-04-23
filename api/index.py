@@ -525,6 +525,37 @@ def about():
 
 
 # ============================================================================
+# STATIC FILES (for Vercel)
+# ============================================================================
+
+@app.route('/static/favicon.svg')
+def favicon():
+    """Serve favicon"""
+    import os
+    favicon_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'favicon.svg')
+    from flask import send_file
+    return send_file(favicon_path, mimetype='image/svg+xml')
+
+
+@app.route('/static/manifest.json')
+def manifest():
+    """Serve PWA manifest"""
+    import os
+    manifest_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'manifest.json')
+    from flask import send_file, json
+    return send_file(manifest_path, mimetype='application/json')
+
+
+@app.route('/static/sw.js')
+def service_worker():
+    """Serve service worker"""
+    import os
+    sw_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'sw.js')
+    from flask import send_file
+    return send_file(sw_path, mimetype='application/javascript')
+
+
+# ============================================================================
 # MARKDOWN FILTER
 # ============================================================================
 
