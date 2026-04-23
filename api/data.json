@@ -1,7 +1,7 @@
 {
   "admin": {
     "username": "admin",
-    "password_hash": "$2b$12$vUj0evDK2SJ.ee2HJbVtSevAvqdDifVowOy9wfTmDY3VlSBBoRy0y"
+    "password_hash": "$2b$12$5oBQXZ9BdOpMTAyKFx6FSe/TWNqh2X7hH/wm6j2XhFcB0lR0Ktex."
   },
   "users": [
     {
@@ -9,6 +9,13 @@
       "username": "demo",
       "password_hash": "$2b$12$UeO7zsvYYUvwnVQ9Amuj0ORtLRlSKibAfCjSrcB88ZMgg/.sr4miS",
       "created_at": "2026-04-23T00:00:00Z",
+      "active": true
+    },
+    {
+      "id": "user-002",
+      "username": "Aung",
+      "password_hash": "$2b$12$9Q8yyGVx25DBjUAhZGK3WuvrSmesQW0Zd8DZMiohThjfiRt/Gf9H6",
+      "created_at": "2026-04-23T04:57:57Z",
       "active": true
     }
   ],
