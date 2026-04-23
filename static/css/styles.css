@@ -121,6 +121,21 @@ a:hover {
     display: none;
 }
 
+/* Hide mobile elements on login page */
+body.login-page .mobile-header,
+body.login-page .mobile-nav,
+body.login-page #sidebar {
+    display: none !important;
+}
+
+body.login-page .main-content {
+    margin-left: 0;
+}
+
+body.login-page .content-area {
+    padding-top: 2rem;
+}
+
 .mobile-menu {
     display: none;
     position: fixed;

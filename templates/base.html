@@ -33,7 +33,7 @@
     
     {% block extra_head %}{% endblock %}
 </head>
-<body class="bg-dark-custom">
+<body class="bg-dark-custom{% block body_class %}{% endblock %}">
     
     {% block body_start %}{% endblock %}
     
