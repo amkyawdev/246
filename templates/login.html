@@ -1,36 +1,16 @@
 {% extends "base.html" %}
 
-{% block body_class %} login-page{% endblock %}
+{% block body_class %}{% endblock %}
 
 {% block title %}Get Started - Burme AI{% endblock %}
 
 {% block extra_head %}
 <style>
 .login-container {
-    min-height: calc(100vh - 200px);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Hide mobile header on login page */
-.mobile-header {
-    display: none !important;
-}
-
-/* Hide mobile menu on login page */
-#mobile-menu {
-    display: none !important;
-}
-
-/* Hide bottom nav on login page */
-.mobile-nav {
-    display: none !important;
-}
-
-/* Desktop sidebar hidden on mobile */
-body.login-page #sidebar {
-    display: none !important;
 }
 
 .login-card {

@@ -113,70 +113,8 @@ a:hover {
 }
 
 .content-area {
-    padding: 1.5rem;
+    padding: 2rem;
     min-height: calc(100vh - 60px);
-}
-
-.mobile-header {
-    display: none;
-}
-
-/* Hide mobile elements on login page */
-body.login-page .mobile-header,
-body.login-page .mobile-nav,
-body.login-page #sidebar {
-    display: none !important;
-}
-
-body.login-page .main-content {
-    margin-left: 0;
-}
-
-body.login-page .content-area {
-    padding-top: 2rem;
-}
-
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    max-height: calc(100vh - 130px);
-    overflow-y: auto;
-}
-
-.mobile-menu.show {
-    display: block;
-}
-
-/* ===== Mobile Navigation ===== */
-.mobile-nav {
-    display: none;
-    height: 56px;
-    background-color: var(--secondary);
-    border-top: 1px solid var(--border-color);
-    z-index: 100;
-}
-
-.mobile-nav .nav-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5rem;
-    color: var(--text-secondary);
-    font-size: 0.75rem;
-    transition: color 0.3s ease;
-}
-
-.mobile-nav .nav-link i {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-}
-
-.mobile-nav .nav-link.active {
-    color: var(--accent);
 }
 
 /* ===== Buttons ===== */

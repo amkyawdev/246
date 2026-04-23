@@ -1,42 +1,12 @@
 /**
  * Burme AI - Main JavaScript
- * Mobile navigation, button effects, and utilities
+ * Button effects and utilities
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    initMobileMenu();
     initRippleEffects();
     initNavigation();
 });
-
-/**
- * Mobile Menu Toggle
- */
-function initMobileMenu() {
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (!hamburgerBtn || !mobileMenu) return;
-    
-    hamburgerBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        mobileMenu.classList.toggle('show');
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-            mobileMenu.classList.remove('show');
-        }
-    });
-    
-    // Close menu on navigation
-    mobileMenu.querySelectorAll('a').forEach(function(link) {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.remove('show');
-        });
-    });
-}
 
 /**
  * Ripple Button Effects
@@ -99,33 +69,7 @@ function initNavigation() {
             link.classList.add('active');
         }
     });
-    
-    // Mobile bottom nav links
-    document.querySelectorAll('.mobile-nav .nav-link').forEach(function(link) {
-        const href = link.getAttribute('href');
-        if (href === currentPath) {
-            link.classList.add('active');
-        }
-    });
-    
-    // Mobile menu links
-    document.querySelectorAll('.mobile-menu .nav-link').forEach(function(link) {
-        const href = link.getAttribute('href');
-        if (href === currentPath) {
-            link.classList.add('active');
-        }
-    });
 }
-
-/**
- * Auto-hide mobile menu on resize
- */
-window.addEventListener('resize', function() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (window.innerWidth >= 991 && mobileMenu) {
-        mobileMenu.classList.remove('show');
-    }
-});
 
 /**
  * Format timestamp to readable date
@@ -176,7 +120,7 @@ function showToast(message, duration) {
     toast.className = 'toast-notification';
     toast.style.cssText = `
         position: fixed;
-        bottom: 80px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         background: var(--accent, #E94560);
@@ -213,23 +157,5 @@ function debounce(func, wait) {
         timeout = setTimeout(function() {
             func.apply(context, args);
         }, wait);
-    };
-}
-
-/**
- * Throttle function
- */
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(function() {
-                inThrottle = false;
-            }, limit);
-        }
     };
 }
