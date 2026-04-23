@@ -8,6 +8,16 @@
 
 > **Multi-Provider AI API Platform** with automatic failover, admin dashboard, and high-end UI/UX
 
+## 📸 Preview
+
+<p align="center">
+  <img src="https://placehold.co/800x450/0D0D0D/E94560?text=Burme+AI+Chat+Interface" alt="Burme AI Screenshot">
+</p>
+
+## 🔗 Live Demo
+
+🌐 **Live Demo**: [https://burme-ai.vercel.app](https://burme-ai.vercel.app)
+
 ## 📋 Overview
 
 Burme AI is a professional Flask web application designed for Vercel serverless deployment. It provides a high-availability AI chat API that automatically rotates between multiple providers (Groq, Cerebras, OpenRouter, NVIDIA, HuggingFace) with intelligent failover handling.
