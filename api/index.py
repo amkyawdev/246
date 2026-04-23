@@ -383,7 +383,7 @@ def login_post():
 @app.route('/login')
 def login():
     """Login page (GET)"""
-    if 'admin' in session or 'user_id' in session:
+    if session.get('user_id') or session.get('admin'):
         return redirect(url_for('chat'))
     return render_template('login.html')
 
