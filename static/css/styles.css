@@ -309,29 +309,7 @@ tbody tr:hover {
     margin-top: auto;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 991px) {
-    .sidebar {
-        display: none !important;
-    }
-    
-    .main-content {
-        margin-left: 0;
-    }
-    
-    .mobile-header {
-        display: flex;
-        align-items: center;
-    }
-    
-    .mobile-nav {
-        display: flex;
-    }
-    
-    .content-area {
-        padding-bottom: 80px;
-    }
-}
 
 /* ===== Scrollbar ===== */
 ::-webkit-scrollbar {
