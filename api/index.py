@@ -337,7 +337,7 @@ def index():
 
 
 @app.route('/login', methods=['POST'])
-def login():
+def login_post():
     """Process login"""
     username = request.form.get('username', '').strip()
     password = request.form.get('password', '')
@@ -372,6 +372,14 @@ def login():
     
     log_action('login_failed', username, 'User not found')
     return render_template('login.html', error='Invalid credentials')
+
+
+@app.route('/login')
+def login():
+    """Login page (GET)"""
+    if 'admin' in session or 'user_id' in session:
+        return redirect(url_for('chat'))
+    return render_template('login.html')
 
 
 @app.route('/logout')
