@@ -11,6 +11,16 @@
     justify-content: center;
 }
 
+/* Hide mobile header on login page */
+.mobile-header {
+    display: none !important;
+}
+
+/* Hide bottom nav on login page */
+.mobile-nav {
+    display: none !important;
+}
+
 .login-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -163,57 +173,6 @@
 {% endblock %}
 
 {% block mobile_menu_items %}
-<li class="nav-item">
-    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{{ url_for('index') }}">
-        <i class="fa-solid fa-rocket me-2"></i> Get Started
-    </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{ url_for('chat') }}">
-        <i class="fa-solid fa-comments me-2"></i> Chat
-    </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{ url_for('api_status') }}">
-        <i class="fa-solid fa-server me-2"></i> API Status
-    </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{ url_for('docs') }}">
-        <i class="fa-solid fa-book me-2"></i> Docs
-    </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{ url_for('about') }}">
-        <i class="fa-solid fa-info-circle me-2"></i> About
-    </a>
-</li>
-{% endblock %}
-
-{% block bottom_nav_items %}
-<a href="{{ url_for('index') }}" class="nav-link text-center {% if request.path == '/' %}active{% endif %}">
-    <i class="fa-solid fa-rocket d-block"></i>
-    <small>Start</small>
-</a>
-<a href="{{ url_for('chat') }}" class="nav-link text-center">
-    <i class="fa-solid fa-comments d-block"></i>
-    <small>Chat</small>
-</a>
-<a href="{{ url_for('api_status') }}" class="nav-link text-center">
-    <i class="fa-solid fa-server d-block"></i>
-    <small>Status</small>
-</a>
-<a href="{{ url_for('docs') }}" class="nav-link text-center">
-    <i class="fa-solid fa-book d-block"></i>
-    <small>Docs</small>
-</a>
-<a href="{{ url_for('about') }}" class="nav-link text-center">
-    <i class="fa-solid fa-info-circle d-block"></i>
-    <small>About</small>
-</a>
-{% endblock %}
-
-{% block sidebar_items %}
 <li class="nav-item">
     <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{{ url_for('index') }}">
         <i class="fa-solid fa-rocket me-2"></i> Get Started
