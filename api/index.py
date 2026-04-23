@@ -25,8 +25,9 @@ app.secret_key = os.environ.get('SECRET_KEY', 'burme-ai-secret-key-change-in-pro
 # Enable CORS
 CORS(app, supports_credentials=True)
 
-# Data file path
-DATA_FILE = os.path.join(os.path.dirname(__file__), 'data.json')
+# Data file path - use absolute path for Vercel compatibility
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(BASE_DIR, 'data.json')
 
 # Provider configuration
 PROVIDERS = [
