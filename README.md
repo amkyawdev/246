@@ -62,7 +62,7 @@ pip install -r requirements.txt
 
 ### 2. Configure Environment
 
-Set the following environment variables:
+Set the following environment variables in Vercel Dashboard → Settings → Environment Variables:
 
 | Variable | Description |
 |----------|-------------|
@@ -71,21 +71,31 @@ Set the following environment variables:
 | `OPENROUTER_API_KEY` | OpenRouter API key(s) |
 | `NVIDIA_API_KEY` | NVIDIA API key(s) |
 | `HUGGINGFACE_API_KEY` | HuggingFace API key(s) |
-| `SECRET_KEY` | Flask secret key |
+| `SECRET_KEY` | Flask secret key (generate random) |
 
-### 3. Run Locally
+### 3. Deploy to Vercel
 
+**Option A: Vercel CLI**
 ```bash
-python api/index.py
-# Visit http://localhost:5000
-```
-
-### 4. Deploy to Vercel
-
-```bash
+npm i -g vercel
 vercel login
 vercel --prod
 ```
+
+**Option B: GitHub Integration**
+1. Go to [Vercel Dashboard](https://vercel.com)
+2. Import GitHub repository `amkyawdev/246`
+3. Add environment variables
+4. Deploy!
+
+### 4. Access the App
+
+After deployment, visit your Vercel URL and login with:
+
+| Role | Username | Password |
+|------|----------|----------|
+| Admin | `admin` | `admin123` |
+| User | `demo` | `user123` |
 
 ## 📁 Project Structure
 
