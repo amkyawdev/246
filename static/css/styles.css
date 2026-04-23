@@ -117,6 +117,61 @@ a:hover {
     min-height: calc(100vh - 60px);
 }
 
+/* ===== Mobile Header ===== */
+.mobile-header {
+    display: none;
+    height: 56px;
+    z-index: 1030;
+}
+
+.mobile-header + #mobile-menu {
+    top: 56px;
+}
+
+/* ===== Mobile Menu ===== */
+#mobile-menu {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    z-index: 1029;
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+#mobile-menu.show {
+    display: block;
+}
+
+/* ===== Mobile Navigation ===== */
+.mobile-nav {
+    display: none;
+    height: 56px;
+    z-index: 1029;
+    border-top: 1px solid var(--border-color);
+}
+
+.mobile-nav .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav .nav-link i {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.mobile-nav .nav-link.active {
+    color: var(--accent);
+}
+
 /* ===== Buttons ===== */
 .btn-sm {
     padding: 0.5rem 1rem;

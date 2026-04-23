@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block body_class %}{% endblock %}
+{% block body_class %} login-page{% endblock %}
 
 {% block title %}Get Started - Burme AI{% endblock %}
 
@@ -11,6 +11,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Hide mobile elements on login page */
+body.login-page .mobile-header,
+body.login-page #mobile-menu,
+body.login-page .mobile-nav {
+    display: none !important;
+}
+
+/* Adjust main content on login page */
+body.login-page .main-content {
+    margin-left: 0;
+}
+
+body.login-page .content-area {
+    padding-top: 3rem;
 }
 
 .login-card {

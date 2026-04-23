@@ -1,12 +1,42 @@
 /**
  * Burme AI - Main JavaScript
- * Button effects and utilities
+ * Mobile navigation, button effects, and utilities
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    initMobileMenu();
     initRippleEffects();
     initNavigation();
 });
+
+/**
+ * Mobile Menu Toggle
+ */
+function initMobileMenu() {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (!hamburgerBtn || !mobileMenu) return;
+    
+    hamburgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('show');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+            mobileMenu.classList.remove('show');
+        }
+    });
+    
+    // Close menu on navigation
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('show');
+        });
+    });
+}
 
 /**
  * Ripple Button Effects
@@ -64,6 +94,22 @@ function initNavigation() {
     
     // Desktop sidebar links
     document.querySelectorAll('.sidebar .nav-link').forEach(function(link) {
+        const href = link.getAttribute('href');
+        if (href === currentPath) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Mobile bottom nav links
+    document.querySelectorAll('.mobile-nav .nav-link').forEach(function(link) {
+        const href = link.getAttribute('href');
+        if (href === currentPath) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Mobile menu links
+    document.querySelectorAll('#mobile-menu .nav-link').forEach(function(link) {
         const href = link.getAttribute('href');
         if (href === currentPath) {
             link.classList.add('active');
