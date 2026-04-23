@@ -13,20 +13,19 @@
     justify-content: center;
 }
 
-/* Hide mobile elements on login page */
+/* Hide ALL navigation on login page */
+body.login-page #sidebar,
 body.login-page .mobile-header,
 body.login-page #mobile-menu,
 body.login-page .mobile-nav {
     display: none !important;
 }
 
-/* Adjust main content on login page */
+/* Adjust main content for login page */
 body.login-page .main-content {
-    margin-left: 0;
-}
-
-body.login-page .content-area {
-    padding-top: 3rem;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .login-card {

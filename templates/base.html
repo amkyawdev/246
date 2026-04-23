@@ -89,7 +89,7 @@
     </nav>
     
     <!-- Mobile Header (hamburger) -->
-    <header class="mobile-header fixed-top bg-secondary px-3 py-2 d-lg-none">
+    <header class="mobile-header fixed-top bg-secondary px-3 py-2 d-block d-lg-none">
         <button id="hamburger-btn" class="btn text-light border-0" type="button">
             <i class="fa-solid fa-bars fa-lg"></i>
         </button>
@@ -99,7 +99,7 @@
     </header>
     
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="mobile-menu bg-secondary d-lg-none">
+    <div id="mobile-menu" class="mobile-menu bg-secondary d-block d-lg-none">
         <ul class="nav flex-column p-3">
             {% block mobile_menu_items %}
             <li class="nav-item">
@@ -147,7 +147,7 @@
     </main>
     
     <!-- Mobile Bottom Navigation -->
-    <nav class="mobile-nav fixed-bottom bg-secondary d-lg-none">
+    <nav class="mobile-nav fixed-bottom bg-secondary d-block d-lg-none">
         <div class="d-flex justify-content-around align-items-center h-100">
             <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{{ url_for('index') }}">
                 <i class="fa-solid fa-rocket"></i>

@@ -124,10 +124,6 @@ a:hover {
     z-index: 1030;
 }
 
-.mobile-header + #mobile-menu {
-    top: 56px;
-}
-
 /* ===== Mobile Menu ===== */
 #mobile-menu {
     display: none;
@@ -170,6 +166,52 @@ a:hover {
 
 .mobile-nav .nav-link.active {
     color: var(--accent);
+}
+
+/* ===== Responsive ===== */
+/* Desktop: Show sidebar, hide mobile elements */
+@media (min-width: 992px) {
+    #sidebar {
+        display: flex !important;
+    }
+    .mobile-header,
+    #mobile-menu,
+    .mobile-nav {
+        display: none !important;
+    }
+    .main-content {
+        margin-left: 260px;
+    }
+}
+
+/* Mobile: Show mobile elements, hide sidebar */
+@media (max-width: 991.98px) {
+    #sidebar {
+        display: none !important;
+    }
+    .mobile-header,
+    #mobile-menu,
+    .mobile-nav {
+        display: block !important;
+    }
+    .main-content {
+        margin-left: 0;
+        margin-top: 56px;
+        padding-bottom: 70px;
+    }
+    .mobile-header {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    #mobile-menu {
+        top: 56px;
+    }
+    .mobile-nav {
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 }
 
 /* ===== Buttons ===== */
