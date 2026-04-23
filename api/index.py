@@ -89,8 +89,11 @@ def load_data():
 
 def save_data(data):
     """Save data to JSON file"""
-    with open(DATA_FILE, 'w') as f:
-        json.dump(data, f, indent=2)
+    try:
+        with open(DATA_FILE, 'w') as f:
+            json.dump(data, f, indent=2)
+    except Exception as e:
+        print(f"Warning: Could not save data: {e}")
 
 
 def generate_id(prefix='id'):
@@ -100,18 +103,21 @@ def generate_id(prefix='id'):
 
 def log_action(action, user='system', details=''):
     """Log an action to data.json"""
-    data = load_data()
-    data['logs'].append({
-        'id': generate_id('log'),
-        'timestamp': datetime.utcnow().isoformat() + 'Z',
-        'action': action,
-        'user': user,
-        'details': details
-    })
-    # Keep only last 1000 logs
-    if len(data['logs']) > 1000:
-        data['logs'] = data['logs'][-1000:]
-    save_data(data)
+    try:
+        data = load_data()
+        data['logs'].append({
+            'id': generate_id('log'),
+            'timestamp': datetime.utcnow().isoformat() + 'Z',
+            'action': action,
+            'user': user,
+            'details': details
+        })
+        # Keep only last 1000 logs
+        if len(data['logs']) > 1000:
+            data['logs'] = data['logs'][-1000:]
+        save_data(data)
+    except Exception as e:
+        print(f"Warning: Could not log action: {e}")
 
 
 def get_api_keys(env_key):
