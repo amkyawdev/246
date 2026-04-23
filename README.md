@@ -16,7 +16,7 @@
 
 ## 🔗 Live Demo
 
-🌐 **Live Demo**: [https://burme-ai.vercel.app](https://burme-ai.vercel.app)
+🌐 **Live Demo**: [https://246-two.vercel.app](https://246-two.vercel.app)
 
 ## 📋 Overview
 
