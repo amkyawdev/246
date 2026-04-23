@@ -15,9 +15,7 @@
 
 /* Hide ALL navigation on login page */
 body.login-page #sidebar,
-body.login-page .mobile-header,
-body.login-page #mobile-menu,
-body.login-page .mobile-nav {
+body.login-page .mobile-header {
     display: none !important;
 }
 
@@ -25,7 +23,7 @@ body.login-page .mobile-nav {
 body.login-page .main-content {
     margin-left: 0 !important;
     margin-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-top: 0 !important;
 }
 
 .login-card {
@@ -58,10 +56,6 @@ body.login-page .main-content {
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin-top: 0.5rem;
-}
-
-.form-floating > label {
-    color: var(--text-secondary);
 }
 
 .form-control {
@@ -108,11 +102,6 @@ body.login-page .main-content {
     margin-bottom: 1.5rem;
 }
 
-/* Animation */
-.login-card {
-    animation: fadeInUp 0.5s ease-out;
-}
-
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -122,6 +111,10 @@ body.login-page .main-content {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.login-card {
+    animation: fadeInUp 0.5s ease-out;
 }
 </style>
 {% endblock %}
