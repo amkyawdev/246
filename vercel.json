@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
+  ],
+  "framework": null,
+  "outputDirectory": "api",
+  "functions": {
+    "api/index.py": {
+      "runtime": "python3.9",
+      "maxDuration": 60
+    }
+  }
+}

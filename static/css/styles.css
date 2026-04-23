@@ -1,0 +1,420 @@
+/* Burme AI - Custom Styles */
+
+/* ===== CSS Variables ===== */
+:root {
+    --primary: #0D0D0D;
+    --secondary: #1A1A2E;
+    --accent: #E94560;
+    --accent-secondary: #533483;
+    --text-primary: #EAEAEA;
+    --text-secondary: #A0A0A0;
+    --success: #00D9A5;
+    --warning: #FFB830;
+    --error: #FF4757;
+    --card-bg: #16161A;
+    --input-bg: #1E1E24;
+    --border-color: rgba(233, 69, 96, 0.1);
+}
+
+/* ===== Base Styles ===== */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    background-color: var(--primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-primary);
+}
+
+/* ===== Background ===== */
+.bg-dark-custom {
+    background-color: var(--primary);
+    min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    background-color: var(--secondary);
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar .nav {
+    padding: 1rem 0;
+}
+
+.sidebar .nav-link {
+    padding: 0.875rem 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--text-primary);
+    background: rgba(233, 69, 96, 0.05);
+}
+
+.sidebar .nav-link.active {
+    color: var(--accent);
+    background: rgba(233, 69, 96, 0.1);
+    border-left-color: var(--accent);
+}
+
+.sidebar .nav-link i {
+    width: 24px;
+}
+
+.sidebar-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ===== Main Content ===== */
+.main-content {
+    margin-left: 260px;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.content-area {
+    padding: 1.5rem;
+    min-height: calc(100vh - 60px);
+}
+
+.mobile-header {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+}
+
+.mobile-menu.show {
+    display: block;
+}
+
+/* ===== Mobile Navigation ===== */
+.mobile-nav {
+    display: none;
+    height: 56px;
+    background-color: var(--secondary);
+    border-top: 1px solid var(--border-color);
+    z-index: 100;
+}
+
+.mobile-nav .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav .nav-link i {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.mobile-nav .nav-link.active {
+    color: var(--accent);
+}
+
+/* ===== Buttons ===== */
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    border-radius: 8px;
+}
+
+/* Remove default button styles */
+.btn {
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-outline-light {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-primary);
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: white;
+}
+
+.btn-accent:hover {
+    box-shadow: 0 4px 16px rgba(233, 69, 96, 0.3);
+}
+
+/* ===== Cards ===== */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 24px rgba(233, 69, 96, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 32px rgba(233, 69, 96, 0.15);
+}
+
+/* ===== Forms ===== */
+.form-control, input, textarea, select {
+    background-color: var(--input-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.15);
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+}
+
+/* ===== Modal ===== */
+.modal-content {
+    background-color: var(--secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+}
+
+.btn-close-white {
+    filter: invert(1);
+}
+
+/* ===== Tables ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* ===== Badges ===== */
+.badge {
+    padding: 0.25rem 0.625rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* ===== Alerts ===== */
+.alert {
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* ===== Text Colors ===== */
+.text-accent {
+    color: var(--accent) !important;
+}
+
+.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+/* ===== Utilities ===== */
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-semibold {
+    font-weight: 600;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+    .sidebar {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .mobile-header {
+        display: flex;
+        align-items: center;
+    }
+    
+    .mobile-nav {
+        display: flex;
+    }
+    
+    .content-area {
+        padding-bottom: 80px;
+    }
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Three.js Button Effects ===== */
+.three-d-btn {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.three-d-btn:hover {
+    transform: rotateX(5deg) rotateY(5deg);
+}
+
+/* ===== Ripple Effect ===== */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+    width: 200px;
+    height: 200px;
+}

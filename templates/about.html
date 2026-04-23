@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+
+{% block title %}About - Burme AI{% endblock %}
+
+{% block extra_head %}
+<style>
+.about-header {
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.about-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.about-content {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.about-hero {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.about-logo {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.about-logo i {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-hero h1 span {
+    color: var(--accent);
+}
+
+.about-hero p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.about-section {
+    margin-bottom: 2rem;
+}
+
+.about-section:last-child {
+    margin-bottom: 0;
+}
+
+.about-section h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.about-section h2 i {
+    margin-right: 0.75rem;
+    color: var(--accent);
+}
+
+.about-section p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.feature-item {
+    padding: 1rem;
+    background: var(--input-bg);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.feature-item h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.feature-item p {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.admin-info {
+    padding: 1rem;
+    background: var(--input-bg);
+    border-radius: 8px;
+}
+
+.admin-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-item:last-child {
+    border-bottom: none;
+}
+
+.admin-label {
+    color: var(--text-secondary);
+}
+
+.admin-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.version-badge {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    background: rgba(233, 69, 96, 0.15);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="about-header">
+    <div class="about-title">
+        <i class="fa-solid fa-info-circle text-accent me-2"></i>
+        About
+    </div>
+</div>
+
+<div class="about-content">
+    <div class="about-hero">
+        <div class="about-logo">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+        <h1>Burme<span>AI</span></h1>
+        <p>Multi-Provider AI API Platform</p>
+        <span class="version-badge mt-2">v1.0.0</span>
+    </div>
+    
+    <div class="about-section">
+        <h2><i class="fa-solid fa-cube"></i> Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <i class="fa-solid fa-rotate"></i>
+                <h4>Auto Failover</h4>
+                <p>Automatic provider switching on error</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-shield-alt"></i>
+                <h4>Secure Auth</h4>
+                <p>BCrypt password hashing</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-database"></i>
+                <h4>JSON Storage</h4>
+                <p>User data and logs stored locally</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-mobile-alt"></i>
+                <h4>Responsive</h4>
+                <p>Mobile-first design</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-brands fa-3d-sec"></i>
+                <h4>Three.js</h4>
+                <p>3D interactive effects</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-cloud"></i>
+                <h4>Serverless</h4>
+                <p>Vercel deployment ready</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about-section">
+        <h2><i class="fa-solid fa-server"></i> Supported Providers</h2>
+        <p>Burme AI integrates with 5 major AI providers:</p>
+        <ul>
+            <li><i class="fa-solid fa-check text-success me-2"></i>Groq - High-speed inference</li>
+            <li><i class="fa-solid fa-check text-success me-2"></i>Cerebras - Ultra-fast compute</li>
+            <li><i class="fa-solid fa-check text-success me-2"></i>OpenRouter - Aggregated access</li>
+            <li><i class="fa-solid fa-check text-success me-2"></i>NVIDIA - Enterprise-grade</li>
+            <li><i class="fa-solid fa-check text-success me-2"></i>HuggingFace - Open source</li>
+        </ul>
+    </div>
+    
+    <div class="about-section">
+        <h2><i class="fa-solid fa-user-shield"></i> Admin Information</h2>
+        <div class="admin-info">
+            <div class="admin-item">
+                <span class="admin-label">Admin Access</span>
+                <span class="admin-value">Via Login Page</span>
+            </div>
+            <div class="admin-item">
+                <span class="admin-label">Data Storage</span>
+                <span class="admin-value">data.json</span>
+            </div>
+            <div class="admin-item">
+                <span class="admin-label">Session Duration</span>
+                <span class="admin-value">24 hours</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about-section">
+        <h2><i class="fa-solid fa-code"></i> Technology Stack</h2>
+        <p>Built with modern technologies:</p>
+        <ul>
+            <li><strong>Backend:</strong> Python Flask</li>
+            <li><strong>Frontend:</strong> Bootstrap 5 + Tailwind CSS</li>
+            <li><strong>3D Effects:</strong> Three.js</li>
+            <li><strong>Icons:</strong> Font Awesome</li>
+            <li><strong>Deployment:</strong> Vercel Serverless</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

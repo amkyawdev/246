@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block title %}Documentation - Burme AI{% endblock %}
+
+{% block extra_head %}
+<style>
+.docs-header {
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.docs-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.docs-content {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.docs-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.docs-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.docs-section h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.docs-section h2 i {
+    margin-right: 0.75rem;
+    color: var(--accent);
+}
+
+.docs-section p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.docs-section ul {
+    color: var(--text-secondary);
+    padding-left: 1.5rem;
+}
+
+.docs-section li {
+    margin-bottom: 0.5rem;
+}
+
+.code-block {
+    background: var(--input-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.code-block code {
+    color: var(--accent);
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.875rem;
+}
+
+.api-endpoint {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--input-bg);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.method {
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 0.75rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.method.get {
+    background: rgba(0, 217, 165, 0.2);
+    color: var(--success);
+}
+
+.method.post {
+    background: rgba(233, 69, 96, 0.2);
+    color: var(--accent);
+}
+
+.method.put {
+    background: rgba(255, 184, 48, 0.2);
+    color: var(--warning);
+}
+
+.method.delete {
+    background: rgba(255, 71, 87, 0.2);
+    color: var(--error);
+}
+
+.endpoint-path {
+    font-family: monospace;
+    color: var(--text-primary);
+}
+
+.param-list {
+    margin-top: 0.75rem;
+    padding-left: 1.5rem;
+}
+
+.param-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.375rem 0;
+}
+
+.param-name {
+    font-family: monospace;
+    color: var(--accent);
+    min-width: 120px;
+}
+
+.param-type {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+}
+
+.param-desc {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="docs-header">
+    <div class="docs-title">
+        <i class="fa-solid fa-book text-accent me-2"></i>
+        Documentation
+    </div>
+</div>
+
+<div class="docs-content">
+    <!-- Getting Started -->
+    <div class="docs-section">
+        <h2><i class="fa-solid fa-rocket"></i> Getting Started</h2>
+        <p>Burme AI is a multi-provider AI API platform with automatic failover. To get started:</p>
+        <ul>
+            <li>Log in with your admin or user credentials</li>
+            <li>Navigate to the Chat page to start chatting</li>
+            <li>Use the Dashboard to manage users</li>
+            <li>Check API Status to monitor provider health</li>
+        </ul>
+    </div>
+    
+    <!-- API Endpoints -->
+    <div class="docs-section">
+        <h2><i class="fa-solid fa-plug"></i> API Endpoints</h2>
+        
+        <div class="api-endpoint">
+            <span class="method post">POST</span>
+            <span class="endpoint-path">/api/chat</span>
+        </div>
+        <div class="param-list">
+            <div class="param-item">
+                <span class="param-name">message</span>
+                <span class="param-type">string</span>
+                <span class="param-desc">The chat message</span>
+            </div>
+            <div class="param-item">
+                <span class="param-name">history</span>
+                <span class="param-type">array</span>
+                <span class="param-desc">Previous messages (optional)</span>
+            </div>
+            <div class="param-item">
+                <span class="param-name">model</span>
+                <span class="param-type">string</span>
+                <span class="param-desc">Model to use (optional)</span>
+            </div>
+        </div>
+        
+        <div class="api-endpoint mt-3">
+            <span class="method get">GET</span>
+            <span class="endpoint-path">/api/users</span>
+        </div>
+        
+        <div class="api-endpoint mt-3">
+            <span class="method post">POST</span>
+            <span class="endpoint-path">/api/users</span>
+        </div>
+        <div class="param-list">
+            <div class="param-item">
+                <span class="param-name">username</span>
+                <span class="param-type">string</span>
+                <span class="param-desc">New username</span>
+            </div>
+            <div class="param-item">
+                <span class="param-name">password</span>
+                <span class="param-type">string</span>
+                <span class="param-desc">New password</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- API Providers -->
+    <div class="docs-section">
+        <h2><i class="fa-solid fa-server"></i> API Providers</h2>
+        <p>Burme AI uses the following providers in failover order:</p>
+        <ul>
+            <li><strong>Groq</strong> - High-speed inference</li>
+            <li><strong>Cerebras</strong> - Ultra-fast compute</li>
+            <li><strong>OpenRouter</strong> - Aggregated access</li>
+            <li><strong>NVIDIA</strong> - Enterprise-grade</li>
+            <li><strong>HuggingFace</strong> - Open source models</li>
+        </ul>
+    </div>
+    
+    <!-- Environment Variables -->
+    <div class="docs-section">
+        <h2><i class="fa-solid fa-key"></i> Environment Variables</h2>
+        <p>Configure API keys in your Vercel project settings:</p>
+        
+        <div class="code-block">
+            <code>
+            GROQ_API_KEY=your_groq_key<br>
+            CEREBRAS_API_KEY=your_cerebras_key<br>
+            OPENROUTER_API_KEY=your_openrouter_key<br>
+            NVIDIA_API_KEY=your_nvidia_key<br>
+            HUGGINGFACE_API_KEY=your_huggingface_key<br>
+            SECRET_KEY=your_secure_secret_key
+            </code>
+        </div>
+        
+        <p class="mt-3">For multiple keys, separate with commas:</p>
+        <div class="code-block">
+            <code>GROQ_API_KEY=key1,key2,key3</code>
+        </div>
+    </div>
+</div>
+{% endblock %}
