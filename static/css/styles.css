@@ -124,7 +124,7 @@ a:hover {
 
 /* Mobile FAB (Social Media Style) */
 .mobile-fab {
-    display: none;
+    display: flex;
     position: fixed;
     bottom: 24px;
     right: 24px;
@@ -137,12 +137,27 @@ a:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     z-index: 9999;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 .mobile-fab i {
     font-size: 1.25rem;
 }
 .mobile-fab:hover {
     transform: scale(1.1);
+}
+
+/* Desktop: Show sidebar, hide FAB */
+@media (min-width: 992px) {
+    #sidebar {
+        display: flex;
+    }
+    .mobile-fab {
+        display: none;
+    }
+    .main-content {
+        margin-left: 260px;
+    }
 }
 
 /* Mobile: Hide sidebar */
@@ -152,11 +167,6 @@ a:hover {
     }
     .main-content {
         margin-left: 0;
-    }
-    .mobile-fab {
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 }
 
