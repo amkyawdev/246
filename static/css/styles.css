@@ -160,10 +160,21 @@ a:hover {
     }
 }
 
-/* Mobile: Hide sidebar */
+/* Mobile: Hide sidebar, show when toggled */
 @media (max-width: 991.98px) {
     #sidebar {
         display: none !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--secondary);
+        z-index: 9998;
+        padding-top: 60px;
+    }
+    #sidebar.show {
+        display: flex !important;
     }
     .main-content {
         margin-left: 0;
