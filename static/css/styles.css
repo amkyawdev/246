@@ -122,6 +122,7 @@ a:hover {
     display: none;
     height: 56px;
     z-index: 1030;
+    padding: 0 16px;
 }
 
 /* ===== Mobile Menu ===== */
@@ -164,7 +165,7 @@ a:hover {
     }
 }
 
-/* Mobile (<992px): Show mobile header button, hide sidebar and bottom nav */
+/* Mobile (<992px): Show mobile header button, hide sidebar */
 @media (max-width: 991.98px) {
     #sidebar {
         display: none !important;
